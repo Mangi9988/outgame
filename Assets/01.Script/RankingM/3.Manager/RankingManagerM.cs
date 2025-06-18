@@ -3,12 +3,14 @@ using UnityEngine;
 using System.Collections.Generic;
 
 
-
 public class RankingManagerM : MonoBehaviourSingleton<RankingManagerM>
 {
     private RankingRepositoryM _repository;
     private List<RankingM> _rankings;
     private RankingM _myRanking;
+    
+    public List<RankingDTOM> Rankings => _rankings.ConvertAll(r => r.ToDTO());
+    public RankingDTOM MyRanking => _myRanking.ToDTO();
     
     public event Action OnDataChanged;
     protected override void Awake()
@@ -51,11 +53,20 @@ public class RankingManagerM : MonoBehaviourSingleton<RankingManagerM>
 
     private void Sort()
     {
-        _rankings.Sort((x, y) => x.Score.CompareTo(y.Score));
+        _rankings.Sort((x, y) => y.Score.CompareTo(x.Score));
 
         for (int i = 0; i < _rankings.Count; i++)
         {
             _rankings[i].SetRank(i + 1);
         }
+    }
+
+    public void AddScore(int score)
+    {
+        _myRanking.AddScore(score);
+        
+        Sort();
+        
+        OnDataChanged?.Invoke();
     }
 }

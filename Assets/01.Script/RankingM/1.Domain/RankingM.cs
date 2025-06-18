@@ -51,4 +51,9 @@ public class RankingM
         
         Score += score;
     }
+    
+    public RankingDTOM ToDTO()
+    {
+        return new RankingDTOM(this);
+    }
 }
