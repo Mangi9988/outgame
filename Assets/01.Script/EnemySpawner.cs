@@ -19,10 +19,29 @@ public class EnemySpawner : MonoBehaviour
     private int currentSpawnCount = 0;
     private Coroutine spawnCoroutine;
 
+    // TODO: DTO 받아오기
+    private StageLevel _stageLevel;
+    
     public int CurrentAliveCount => _spawnedEnemies.Count;
 
+    public void Start()
+    {
+        Refresh();
+        StageManager.Instance.OnDataChanged += Refresh;
+    }
+
+    private void Refresh()
+    {
+        _stageLevel = StageManager.Instance.Stage.CurrentLevel;
+    }
+    
     private void Update()
     {
+        if (_stageLevel == null)
+        {
+            return;
+        }
+        
         if (spawnCoroutine == null && currentSpawnCount < maxSpawnCount)
         {
             spawnCoroutine = StartCoroutine(Spawn_Coroutine());

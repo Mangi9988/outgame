@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53c202e0b04839348b5bafe0ccc8a5b9, type: 3}
+  m_Name: AttendanceSO
+  m_EditorClassIdentifier: 
+  _startDate: 2025-06-01
+  _attendanceRewards:
+  - {fileID: 11400000, guid: 973f5c392445fbd4d83a47089fafd1f5, type: 2}
+  - {fileID: 11400000, guid: 0b0508b4da4f34a49a87d4852512ceeb, type: 2}
+  - {fileID: 11400000, guid: 2b464b4043398624cac13fd26b7ba3ca, type: 2}

@@ -2511,7 +2511,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1556358123}
         m_TargetAssemblyTypeName: UI_LoginScene, Assembly-CSharp
-        m_MethodName: CreateAccount
+        m_MethodName: Resister
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3118,7 +3118,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 997483567}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1556358123}
+        m_TargetAssemblyTypeName: UI_LoginScene, Assembly-CSharp
+        m_MethodName: OnClickGoToLoginButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &997483567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4199,7 +4211,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1556358123}
         m_TargetAssemblyTypeName: UI_LoginScene, Assembly-CSharp
-        m_MethodName: OnClickGotoCreateAccountButton
+        m_MethodName: OnClickGoToResisterButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5232,12 +5244,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a4ca7f5a8a0c2f4eb34773dd0d438e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LoginPanel: {fileID: 0}
+  LoginPanel: {fileID: 1562283919}
   CreateAccountPanel: {fileID: 734457270}
   LoginInputFields:
     ResultText: {fileID: 491895766}
     EmailInputField: {fileID: 1532957296}
-    NicknameInputField: {fileID: 0}
+    NicknameInputField: {fileID: 1354780092}
     PasswordInputField: {fileID: 1601054859}
     PasswordCheckInputField: {fileID: 1900355846}
     ConfirmButton: {fileID: 515495801}
@@ -6661,7 +6673,7 @@ MonoBehaviour:
   m_CharacterValidation: 4
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 10
+  m_CharacterLimit: 18
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls: []
